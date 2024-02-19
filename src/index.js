@@ -51,8 +51,8 @@ const [componentName] = program.args;
 
 const options = program.opts();
 
-const fileExtension = options.lang === 'js' ? 'js' : 'tsx';
-const indexExtension = options.lang === 'js' ? 'js' : 'ts';
+const fileExtension = options.lang === 'js' ? 'jsx' : 'tsx';
+const indexExtension = options.lang === 'js' ? 'jsx' : 'ts';
 
 // Find the path to the selected template file.
 const templatePath = `./templates/${options.lang}.js`;
