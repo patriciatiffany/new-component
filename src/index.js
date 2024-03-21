@@ -52,7 +52,7 @@ const [componentName] = program.args;
 const options = program.opts();
 
 const fileExtension = options.lang === 'js' ? 'jsx' : 'tsx';
-const indexExtension = options.lang === 'js' ? 'jsx' : 'ts';
+const indexExtension = options.lang === 'js' ? 'js' : 'ts';
 
 // Find the path to the selected template file.
 const templatePath = `./templates/${options.lang}.js`;
@@ -61,6 +61,7 @@ const templatePath = `./templates/${options.lang}.js`;
 const componentDir = `${options.dir}/${componentName}`;
 const filePath = `${componentDir}/${componentName}.${fileExtension}`;
 const indexPath = `${componentDir}/index.${indexExtension}`;
+const stylesPath = `${componentDir}/${componentName}.module.css`;
 
 // Our index template is super straightforward, so we'll just inline it for now.
 const indexTemplate = prettify(`\
