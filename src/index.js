@@ -119,6 +119,10 @@ mkDirPromise(componentDir)
     // We also need the `index.js` file, which allows easy importing.
     writeFilePromise(indexPath, prettify(indexTemplate))
   )
+  .then((template) =>
+    // Write an empty CSS file for local styles
+    writeFilePromise(stylesPath, '')
+  )
   .then((template) => {
     logItemCompletion('Index file built and saved to disk.');
     return template;
